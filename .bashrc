@@ -3,14 +3,14 @@
 #
 
 ##### CUSTOM FUNCTIONS #####
-source ~/dotfiles_work/shell/custom_functions.sh
+source ~/dotfiles_server/shell/custom_functions.sh
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls -lAFh --color=auto'
 alias grep='grep --color=auto'
-source ~/dotfiles_work/shell/aliases.sh
+source ~/dotfiles_server/shell/aliases.sh
 PS1='[\u@\h \W]\$ '
 
 ##### STARSHIP PROMPT #####

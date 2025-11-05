@@ -3,7 +3,7 @@ macOS="Darwin"
 linux="Linux"
 
 ##### CUSTOM FUNCTIONS #####
-source ~/dotfiles_work/shell/custom_functions.sh
+source ~/dotfiles_server/shell/custom_functions.sh
 
 
 if [[ "$hostOS" == "$macOS" ]]; then
@@ -154,7 +154,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 ##### ALIASES #####
-source ~/dotfiles_work/shell/aliases.sh
+source ~/dotfiles_server/shell/aliases.sh
 
 ##### STARSHIP #####
 eval "$(starship init zsh)"

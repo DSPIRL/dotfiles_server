@@ -2,7 +2,7 @@ source ~/.config/nushell/env_config.nu
 source ~/.config/nushell/paths.nu
 source ~/.config/nushell/keybinds.nu
 
-# source ~/dotfiles_work/config/nushell/login.nu
+# source ~/dotfiles_server/config/nushell/login.nu
 
 
 # $env.config = {
