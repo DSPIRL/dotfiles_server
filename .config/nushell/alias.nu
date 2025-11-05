@@ -1,0 +1,61 @@
+##### CORE #####
+alias core-ls = ls
+alias core-cd = cd
+alias core-vim = vim
+
+##### CUSTOM REDEFINITIONS #####
+def ls [] {
+    core-ls -la | select name type mode user group size modified
+}
+
+alias cd = z
+
+
+##### CUSTOM FUNCTIONS #####
+#ef tms [] {
+#   tmux new-session -d -s GoodSesh
+#   tmux new-window -t GoodSesh:1 -n 'Terminal'
+#   tmux new-window -t GoodSesh:2 -n 'Neovim'
+#   tmux attach-session -t GoodSesh
+#
+
+
+##### TESTING #####
+alias modhelp = cat ~/dotfiles_work/shell/manpages/help_chmod.md
+
+def greet [...names] { 
+    $names | each {
+        |el|
+        (echo $"Hello ($el)") 
+    }
+}
+
+
+##### ALIAS #####
+alias cls = clear
+alias l = eza -lhAF --color=auto --icons=always
+alias exifall = exiftool -all=
+alias exifkeepicc = exiftool -all= --icc_profile:all
+
+alias vim = nvim
+alias nv = nvim
+alias n = nvim
+alias se = sudoedit
+
+alias k = kubectl
+alias p = podman
+alias pc = podman-compose
+
+alias d = docker
+alias dc = docker compose
+
+alias kanata-restart = nu ~/dotfiles_work/.config/nushell/scripts/mac-kanata-restart.nu
+alias kanata-start = nu ~/dotfiles_work/.config/nushell/scripts/mac-kanata-start.nu
+alias kanata-stop = nu ~/dotfiles_work/.config/nushell/scripts/mac-kanata-stop.nu
+
+alias modstat = nu ~/dotfiles_work/.config/nushell/scripts/modstat.nu
+alias flatpak-alias = nu ~/dotfiles_work/.config/nushell/scripts/flatpak-alias.nu
+
+#alias tmux-start = tmux new-session -d -s GoodSesh; tmux new-window -t GoodSesh::1 -n 'Terminal'; tmux new-window -t GoodSesh:2 -n 'Neovim'; tmux attach-session -t GoodSesh;
+
+alias glols = git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --stat

@@ -1,0 +1,16 @@
+.DS_Store
+.idea
+.git
+.jj
+history.sqlite3
+history.sqlite3-wal
+history.sqlite3-shm
+history.txt
+
+**/.tmux/plugins
+
+**/.config/nvim/LICENSE
+**/.config/nvim/README.md
+**/.config/nvim/lazy-lock.json
+**/.config/nvim/lazyvim.json
+**/.config/nushell/history.txt
