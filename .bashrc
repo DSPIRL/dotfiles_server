@@ -26,3 +26,6 @@ source <(carapace _carapace)
 if [[ "$hostOS" == "$macOS" ]]; then
   source $HOME/.config/broot/launcher/bash/br
 fi
+
+# Bind Ctrl+O to edit command in vim
+bind '"\C-o": edit-and-execute-command'

@@ -1,6 +1,7 @@
 hostOS=$(uname -s)
 macOS="Darwin"
 linux="Linux"
+nvim_path=$(which nvim)
 
 ##### CUSTOM FUNCTIONS #####
 source ~/dotfiles_server/shell/custom_functions.sh
@@ -11,8 +12,10 @@ if [[ "$hostOS" == "$macOS" ]]; then
     source $HOME/.config/broot/launcher/bash/br
 
     ##### EDITOR #####
-    export VISUAL="/opt/homebrew/bin/nvim"
-    export EDITOR="/opt/homebrew/bin/nvim"
+    export VISUAL="${nvim_path}"
+    export EDITOR="${nvim_path}"
+
+
 
     ##### JAVA #####
     # For most things use this one below
@@ -65,7 +68,9 @@ if [[ "$hostOS" == "$macOS" ]]; then
     setopt hist_verify
 elif [[ "$hostOS" == "$linux" ]]; then
     ##### EDITOR #####
-    export VISUAL="/usr/bin/nvim"
+    export VISUAL="${nvim_path}"
+    export EDITOR="${nvim_path}"
+
 
     ##### PATH #####
     export PATH="$HOME/.local/bin:$PATH"
