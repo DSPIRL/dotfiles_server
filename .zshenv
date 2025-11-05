@@ -11,7 +11,7 @@ if [ $(uname -s) = "Linux" ]; then
 fi
 
 if [ $(uname -s) = "Darwin" ]; then
-    export XDG_CONFIG_HOME="/Users/raphi/.config"
+    export XDG_CONFIG_HOME="${HOME}/.config"
 fi
 
 ##### CUSTOM ENVIRONMENT VARIABLES #####
