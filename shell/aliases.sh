@@ -3,7 +3,7 @@
 alias ls="eza -lhAF --color=auto --icons=always"
 alias cd="z"
 alias cls="clear"
-alias modhelp="cat ~/dotfiles_work/shell/manpages/help_chmod.md"
+alias modhelp="cat ~/dotfiles_server/shell/manpages/help_chmod.md"
 alias glols='git log --graph --pretty="%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset" --stat'
 
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -12,7 +12,7 @@ File type: %HT%SY
 Exec modes: %Sp
 Hex values: %Lp"'
 
-# source ~/dotfiles_work/shell/scripts/gittree.sh
+# source ~/dotfiles_server/shell/scripts/gittree.sh
 
 elif [[ "$(uname -s)" == "Linux" ]]; then
   alias modstat='stat -c "File name: %n

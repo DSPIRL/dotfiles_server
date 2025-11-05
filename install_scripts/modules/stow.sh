@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $HOME/dotfiles_work
+cd $HOME/dotfiles_server
 
 rm -rf ~/.bash_history \
   ~/.bash_logout \

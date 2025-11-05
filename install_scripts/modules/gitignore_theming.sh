@@ -1,6 +1,6 @@
 #!/bin/env bash
 
-cd $HOME/dotfiles_work
+cd $HOME/dotfiles_server
 
 git update-index --assume-unchanged ".config/alacritty/colors.toml" \
   ".config/ghostty/themes/wallust.conf" \

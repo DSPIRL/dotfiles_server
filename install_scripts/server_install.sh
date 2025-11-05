@@ -2,8 +2,8 @@
 
 #==============================================================#
 # Define script variables
-script_path="~/dotfiles_work/install_scripts/"
-dots_path="~/dotfiles_work/"
+script_path="~/dotfiles_server/install_scripts/"
+dots_path="~/dotfiles_server/"
 operatingSystem=$(grep -i "PRETTY_NAME" </etc/os-release | awk -F'"' '{print $2}')
 
 DOTS="${HOME}/dotfiles_server"
