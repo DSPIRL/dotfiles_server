@@ -45,6 +45,7 @@
 #
 # ==================================
 # ===USER CONFIG===
+theme = Carbonfox
 theme = wallust.conf
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
@@ -62,9 +63,12 @@ cursor-style = block
 cursor-click-to-move = true
 
 # === WINDOWS & TABS ===
-background-opacity = 0.7
+background-opacity = 0.93
 background-blur = true
 unfocused-split-opacity = 0.6
+window-decoration = none
+macos-titlebar-style = hidden
+# gtk-titlebar = false
 
 # === KEYBINDS ===
 # WINDOW
@@ -80,16 +84,16 @@ keybind = ctrl+alt+k=goto_split:up
 keybind = ctrl+alt+l=goto_split:right
 keybind = ctrl+alt+enter=toggle_split_zoom
 
-keybind = ctrl+shift+l=new_split:right
-keybind = ctrl+shift+h=new_split:left
-keybind = ctrl+shift+j=new_split:down
-keybind = ctrl+shift+k=new_split:up
-
 keybind = ctrl+alt+equal=equalize_splits
 keybind = ctrl+alt+shift+k=resize_split:up,10
 keybind = ctrl+alt+shift+j=resize_split:down,10
 keybind = ctrl+alt+shift+h=resize_split:left,10
 keybind = ctrl+alt+shift+l=resize_split:right,10
+
+keybind = ctrl+shift+l=new_split:right
+keybind = ctrl+shift+h=new_split:left
+keybind = ctrl+shift+j=new_split:down
+keybind = ctrl+shift+k=new_split:up
 
 # TABS
 keybind = alt+one=goto_tab:1
@@ -103,14 +107,14 @@ keybind = alt+eight=goto_tab:8
 keybind = alt+nine=goto_tab:9
 keybind = alt+zero=last_tab
 
-keybind = ctrl+shift+t=new_tab
-keybind = ctrl+shift+w=close_tab
+keybind = ctrl+t=new_tab
+keybind = ctrl+w=close_tab
 
 keybind = ctrl+tab=next_tab
 keybind = ctrl+shift+tab=previous_tab
 
 # QUICK TERMINAL
-# keybind = ctrl+alt+enter=toggle_quick_terminal
+keybind = ctrl+alt+space=toggle_quick_terminal
 
 # CLIPBOARD
 keybind = ctrl+shift+v=paste_from_clipboard
@@ -119,7 +123,7 @@ keybind = ctrl+shift+a=select_all
 
 # SCREEN TO FILE
 keybind = ctrl+shift+o=write_screen_file:open
-keybind = ctrl+shift+j=write_screen_file:paste
+# keybind = ctrl+shift+j=write_screen_file:paste
 
 # CONFIG
 keybind = ctrl+comma=open_config

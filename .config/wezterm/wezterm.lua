@@ -38,12 +38,13 @@ if operatingSystem == "Darwin" then
 	config.window_background_opacity = 0.8
 	config.enable_tab_bar = false
 	config.font_size = 13
+	require("macos-colors")
 else
-	config.enable_wayland = false
+	config.enable_wayland = true
 	config.window_decorations = "TITLE | RESIZE"
-	config.window_background_opacity = 0.4
+	config.window_background_opacity = 1.0
 	config.enable_tab_bar = false
-	config.font_size = 16
+	config.font_size = 13
 end
 
 config.hide_mouse_cursor_when_typing = true
@@ -56,7 +57,7 @@ config.initial_rows = 50
 -- MY COLOR SCHEME ---
 config.colors = {
 	foreground = "#CBE0F0",
-	background = "#111115",
+	background = "#080811",
 	cursor_bg = "#47FF9C",
 	cursor_border = "#47FF9C",
 	cursor_fg = "#011423",
@@ -68,6 +69,7 @@ config.colors = {
 
 -- END MY COLOR SCHEME --
 
+-- config.window_background_image = "Users/raphi/.config/wezterm/painted.jpg"
 -- config.window_background_image_hsb = {
 -- 	brightness = 0.01
 -- }

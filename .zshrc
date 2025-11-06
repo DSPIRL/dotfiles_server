@@ -8,33 +8,11 @@ source ~/dotfiles_server/shell/custom_functions.sh
 
 
 if [[ "$hostOS" == "$macOS" ]]; then
-    ##### BROOT #####
-    source $HOME/.config/broot/launcher/bash/br
-
-    ##### EDITOR #####
-    export VISUAL="${nvim_path}"
-    export EDITOR="${nvim_path}"
-
-
-
-    ##### JAVA #####
-    # For most things use this one below
-    # export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/openjdk-22.0.2/Contents/Home"
-
-    # For Rust Tauri Dev use the below
-    export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
-    export ANDROID_HOME="$HOME/Library/Android/sdk"
-    export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
-
     ##### PATH #####
     export PATH="$HOME/.local/bin:$PATH"
     export PATH="$HOME/.local/scripts:$PATH"
-    export PATH="$HOME/development/flutter/bin:$PATH"
-    export PATH="$HOME/fvm/default/bin:$PATH"
-    export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-    export PATH="/opt/homebrew/lib/ruby/gems/3.4.0/bin:$PATH"
+    export PATH="$PATH:$HOME/.lmstudio/bin"
     export PATH="$JAVA_HOME/bin:$PATH"
-    export GEM_HOME=$HOME/.gem
 
     ##### DOTNET #####
     if [[ $(ls -lAFh | grep ".dotnet") ]]; then
@@ -48,17 +26,12 @@ if [[ "$hostOS" == "$macOS" ]]; then
 
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-    ##### DART #####
-    ## [Completion]
-    ## Completion scripts setup. Remove the following line to uninstall
-    [[ -f $HOME/.config/.dart-cli-completion/zsh-config.zsh ]] && . $HOME/.config/.dart-cli-completion/zsh-config.zsh || true
-    ## [/Completion]
-
     ##### ZSH #####
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     # source /opt/homebrew/share/zsh-completions/zsh-completions.zsh
-    # History setup 
+
+    # History setup
     HISTFILE=$HOME/.zhistory
     SAVEHIST=1000
     HISTSIZE=999
@@ -66,24 +39,14 @@ if [[ "$hostOS" == "$macOS" ]]; then
     setopt hist_expire_dups_first
     setopt hist_ignore_dups
     setopt hist_verify
+
 elif [[ "$hostOS" == "$linux" ]]; then
-    ##### EDITOR #####
-    export VISUAL="${nvim_path}"
-    export EDITOR="${nvim_path}"
-
-
     ##### PATH #####
     export PATH="$HOME/.local/bin:$PATH"
     export PATH="$HOME/.local/scripts:$PATH"
 
-    ##### JAVA #####
-    export JAVA_HOME=/opt/android-studio/jbr
-    export ANDROID_HOME="$HOME/Android/Sdk"
-    # export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
-
     ##### EMACS #####
     [[ -d ~/.config/emacs/bin ]] && export PATH="$HOME/.config/emacs/bin:$PATH"
-
 
     ##### DOTNET #####
     if [[ $(ls -lAFh | grep ".dotnet") ]]; then
@@ -94,7 +57,8 @@ elif [[ "$hostOS" == "$linux" ]]; then
     ##### ZSH #####
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-    # History setup 
+
+    # History setup
     HISTFILE=$HOME/.zhistory
     SAVEHIST=1000
     HISTSIZE=999
@@ -105,8 +69,11 @@ elif [[ "$hostOS" == "$linux" ]]; then
 
 fi
 
+##### EDITOR | VISUAL #####
+export VISUAL="${nvim_path}"
+export EDITOR="${nvim_path}"
+
 ##### FZF #####
-# if statement
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPS="--extended --multi --preview 'cat {}'"
 export FZF_CTRL_COMMAND="find . -printf '%P\\n'"
@@ -154,8 +121,6 @@ elif [[ "$hostOS" == "$linux" ]]; then
     )
 fi
 
-
-
 source $ZSH/oh-my-zsh.sh
 
 ##### ALIASES #####
@@ -173,17 +138,3 @@ bindkey '^O' edit-command-line
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
-
-
-if [[ $(uname -s) = "Darwin" ]]; then
-    # Added by LM Studio CLI (lms)
-    export PATH="$PATH:$HOME/.lmstudio/bin"
-    # End of LM Studio CLI section
-fi
-
-##### SYNCTHING #####
-if [[ -f /usr/bin/syncthing && "$hostOS" == "$linux" ]]; then
-    autoload -U +X bashcompinit && bashcompinit;
-    complete -C /usr/bin/syncthing syncthing;
-fi
-
