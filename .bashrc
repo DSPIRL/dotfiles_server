@@ -17,7 +17,7 @@ PS1='[\u@\h \W]\$ '
 # eval "$(starship init bash)"
 
 ##### OhMyPosh PROMPT #####
-eval "$(oh-my-posh init zsh)"
+eval "$(oh-my-posh init bash)"
 
 ##### COMPLETERS #####
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
