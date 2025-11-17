@@ -14,7 +14,10 @@ source ~/dotfiles_server/shell/aliases.sh
 PS1='[\u@\h \W]\$ '
 
 ##### STARSHIP PROMPT #####
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
+
+##### OhMyPosh PROMPT #####
+eval "$(oh-my-posh init zsh)"
 
 ##### COMPLETERS #####
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
