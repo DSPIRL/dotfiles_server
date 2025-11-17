@@ -8,6 +8,7 @@ fd-find
 fzf
 git
 htop
+jq
 lsof
 man-db
 neovim
