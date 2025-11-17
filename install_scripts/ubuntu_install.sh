@@ -33,7 +33,7 @@ if [[ "$operatingSystem" == "Ubuntu" ]]; then
     # Carapace (Install through Fury)
     # /etc/apt/sources.list.d/fury.list
     echo "deb [trusted=yes] https://apt.fury.io/rsteube/ /" | sudo tee /etc/apt/sources.list.d/fury.list
-    apt-get update && apt-get install carapace-bin
+    sudo apt-get update && sudo apt-get install carapace-bin
 
     # OhMyPosh Setup
     curl -s https://ohmyposh.dev/install.sh | bash -s

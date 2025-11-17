@@ -17,7 +17,7 @@ source ~/.zoxide.nu
 # source ~/.config/nushell/starship.nu
 oh-my-posh init nu
 
-source ~/.cache/carapace/init.nu
+# source ~/.cache/carapace/init.nu
 
 source ~/.config/nushell/alias.nu
 
