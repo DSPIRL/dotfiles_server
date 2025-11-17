@@ -127,7 +127,10 @@ source $ZSH/oh-my-zsh.sh
 source ~/dotfiles_server/shell/aliases.sh
 
 ##### STARSHIP #####
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+##### OpMyPosh PROMPT #####
+eval "$(oh-my-posh init zsh)"
 
 ##### KEYBINDS #####
 autoload -U edit-command-line
