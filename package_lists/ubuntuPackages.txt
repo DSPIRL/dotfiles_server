@@ -16,7 +16,6 @@ npm
 nushell
 pypy
 ripgrep
-starship
 stow
 tldr
 tree
