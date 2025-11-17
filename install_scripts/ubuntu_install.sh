@@ -41,7 +41,7 @@ if [[ "$operatingSystem" == "Ubuntu" ]]; then
 
   # Neovim Install
   cd $HOME
-  bash -c "${DOTMODS}/lazyvim.sh"
+  # bash -c "${DOTMODS}/lazyvim.sh"
 
   # Install Packages
   sudo apt install $(awk -v RS= '{$1=$1}1' ${DOTPKG}/ubuntuPackages.txt)
