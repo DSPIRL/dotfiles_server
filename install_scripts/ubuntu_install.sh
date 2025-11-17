@@ -4,7 +4,8 @@
 # Define script variables
 script_path="~/dotfiles_server/install_scripts/"
 dots_path="~/dotfiles_server/"
-operatingSystem=$(grep -i "NAME" </etc/os-release | awk -F'"' '{print $2}')
+operatingSystem=$(grep -i ^"NAME" </etc/os-release | awk -F'"' '{print $2}')
+echo $operatingSystem
 
 DOTS="${HOME}/dotfiles_server"
 DOTPKG="${DOTS}/package_lists"
@@ -43,7 +44,7 @@ if [[ "$operatingSystem" == "Ubuntu" ]]; then
   bash -c "${DOTMODS}/lazyvim.sh"
 
   # Install Packages
-  paru -S $(awk -v RS= '{$1=$1}1' ${DOTPKG}/ubuntuPackages.txt)
+  sudo apt install $(awk -v RS= '{$1=$1}1' ${DOTPKG}/ubuntuPackages.txt)
 
   # Zoxide Setup
   /usr/bin/zoxide init nushell >~/.zoxide.nu
@@ -63,5 +64,6 @@ if [[ "$operatingSystem" == "Ubuntu" ]]; then
   chsh -s /usr/bin/zsh
 
   # Kill process
-  kill $SUDO_KEEP_ALIVE_PID
 fi
+
+kill $SUDO_KEEP_ALIVE_PID

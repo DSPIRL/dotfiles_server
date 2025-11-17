@@ -3,7 +3,6 @@ btop
 cmake
 curl
 eza
-fastfetch
 fd-find
 fzf
 git
@@ -15,13 +14,11 @@ neovim
 nodejs
 npm
 nushell
-pypy
 ripgrep
 stow
 tldr
 tree
 unzip
-uv
 zoxide
 zsh
 zsh-autosuggestions
