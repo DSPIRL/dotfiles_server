@@ -55,8 +55,8 @@ elif [[ "$hostOS" == "$linux" ]]; then
     fi
 
     ##### ZSH #####
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+#   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # History setup
     HISTFILE=$HOME/.zhistory
@@ -130,7 +130,7 @@ source ~/dotfiles_server/shell/aliases.sh
 # eval "$(starship init zsh)"
 
 ##### OpMyPosh PROMPT #####
-eval "$(oh-my-posh init zsh)"
+eval $(oh-my-posh init zsh)
 
 ##### KEYBINDS #####
 autoload -U edit-command-line

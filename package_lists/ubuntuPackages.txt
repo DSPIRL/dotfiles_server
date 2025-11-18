@@ -21,5 +21,3 @@ tree
 unzip
 zoxide
 zsh
-zsh-autosuggestions
-zsh-syntax-highlighting
