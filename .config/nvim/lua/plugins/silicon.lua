@@ -7,7 +7,29 @@ return {
 		init = function()
 			local wk = require("which-key")
 			wk.add({
-				{ "<leader>ss", ":Silicon<CR>", desc = "Screenshot highlighted code.", mode = "v" },
+				mode = { "v" },
+				{ "<leader>z", group = "Silicon" },
+				{
+					"<leader>zc",
+					function()
+						require("nvim-silicon").clip()
+					end,
+					desc = "Copy code screenshot to clipboard",
+				},
+				{
+					"<leader>zf",
+					function()
+						require("nvim-silicon").file()
+					end,
+					desc = "Save code screenshot as file",
+				},
+				{
+					"<leader>zs",
+					function()
+						require("nvim-silicon").shoot()
+					end,
+					desc = "Create code screenshot",
+				},
 			})
 		end,
 		config = function()
@@ -15,8 +37,10 @@ return {
 				font = "Jetbrains Mono Nerd Font=34;Noto Color Emoji=34",
 				theme = "Dracula",
 				-- background = "#94e2d5",
-				background_image = string.format("%s/dotfiles_server/.config/silicon/background.jpg", operating_system),
+				background_image = string.format("%s/.dotfiles/.config/silicon/background.jpg", operating_system),
 				to_clipboard = true,
+				wslclipboard = "auto",
+				wslclipboardcopy = "keep",
 				no_window_controls = false,
 				pad_horiz = 70,
 				pad_vert = 70,
