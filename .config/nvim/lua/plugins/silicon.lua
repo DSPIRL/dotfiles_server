@@ -45,6 +45,13 @@ return {
 				pad_horiz = 70,
 				pad_vert = 70,
 				shadow_offset_x = 0,
+				language = function()
+					return vim.bo.filetype
+				end,
+				language = function()
+					return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":e")
+				end,
+				language = "javascript",
 				shadow_offset_y = 0,
 				shadow_color = nil,
 				shadow_blur_radius = 30,
