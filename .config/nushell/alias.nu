@@ -21,7 +21,7 @@ alias cd = z
 
 
 ##### TESTING #####
-alias modhelp = cat ~/dotfiles_server/shell/manpages/help_chmod.md
+alias modhelp = cat ~/.dotfiles/shell/manpages/help_chmod.md
 
 def greet [...names] { 
     $names | each {
@@ -49,12 +49,12 @@ alias pc = podman-compose
 alias d = docker
 alias dc = docker compose
 
-alias kanata-restart = nu ~/dotfiles_server/.config/nushell/scripts/mac-kanata-restart.nu
-alias kanata-start = nu ~/dotfiles_server/.config/nushell/scripts/mac-kanata-start.nu
-alias kanata-stop = nu ~/dotfiles_server/.config/nushell/scripts/mac-kanata-stop.nu
+alias kanata-restart = nu ~/.dotfiles/.config/nushell/scripts/mac-kanata-restart.nu
+alias kanata-start = nu ~/.dotfiles/.config/nushell/scripts/mac-kanata-start.nu
+alias kanata-stop = nu ~/.dotfiles/.config/nushell/scripts/mac-kanata-stop.nu
 
-alias modstat = nu ~/dotfiles_server/.config/nushell/scripts/modstat.nu
-alias flatpak-alias = nu ~/dotfiles_server/.config/nushell/scripts/flatpak-alias.nu
+alias modstat = nu ~/.dotfiles/.config/nushell/scripts/modstat.nu
+alias flatpak-alias = nu ~/.dotfiles/.config/nushell/scripts/flatpak-alias.nu
 
 #alias tmux-start = tmux new-session -d -s GoodSesh; tmux new-window -t GoodSesh::1 -n 'Terminal'; tmux new-window -t GoodSesh:2 -n 'Neovim'; tmux attach-session -t GoodSesh;
 
